@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:todoapp/res/app_color.dart';
 import 'package:todoapp/screens/addTodo/components/todo_title.dart';
 
 class TodoField extends StatelessWidget {
   final String title;
-  final String hintText;
+  final String? hintText;
   final int? maxLines;
   final TextEditingController controller;
 
@@ -48,7 +47,7 @@ class TodoField extends StatelessWidget {
             ),
             decoration: InputDecoration(
               border: InputBorder.none,
-              hintText: hintText,
+              hintText: hintText ?? ('No Discription Added'),
               hintStyle: const TextStyle(
                 color: Colors.grey,
                 fontSize: 17,

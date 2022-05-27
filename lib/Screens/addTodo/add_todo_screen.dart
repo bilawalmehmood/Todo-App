@@ -92,7 +92,14 @@ class AddTodoScreen extends GetView<AddTodoController> {
                     ],
                   ),
                   const SizedBox(height: 15),
-                  Center(child: AuthButton(onPressed: () {}, name: 'Add Todo'))
+                  Center(
+                      child: AuthButton(
+                          onPressed: (() {
+                            if (controller.validate()) {
+                              controller.addTodo();
+                            }
+                          }),
+                          name: 'Add Todo'))
                 ],
               ),
             )),

@@ -6,6 +6,8 @@ class Constants {
 // Collections
   static final CollectionReference userCollection =
       firestore.collection('users');
+  static final CollectionReference todoCollection =
+      firestore.collection('todo');
 
 // Strings
   static const String appName = 'Chat App Flutter';
