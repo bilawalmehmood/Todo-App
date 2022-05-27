@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:todoapp/res/app_color.dart';
+import 'package:todoapp/screens/addTodo/components/todo_title.dart';
 
 class TodoField extends StatelessWidget {
   final String title;
@@ -21,15 +22,7 @@ class TodoField extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(
-          title,
-          style: const TextStyle(
-            color: AppColor.textColor,
-            fontSize: 17,
-            fontWeight: FontWeight.bold,
-            letterSpacing: 0.2,
-          ),
-        ),
+        TodoTitle(title: title),
         const SizedBox(
           height: 5,
         ),
