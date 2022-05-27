@@ -1,6 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:todoapp/Model/user_model.dart';
-import 'package:todoapp/Res/constants.dart';
+import 'package:todoapp/model/user_model.dart';
+import 'package:todoapp/res/constants.dart';
 
 class UserService {
   static Future<void> saveUser(UserModel userModel) async {

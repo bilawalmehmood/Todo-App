@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:todoapp/Res/app_color.dart';
+import 'package:todoapp/res/app_color.dart';
 
 class HomeCardItem extends StatelessWidget {
   final String title;

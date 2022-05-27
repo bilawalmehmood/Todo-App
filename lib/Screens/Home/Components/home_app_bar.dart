@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:todoapp/Res/app_color.dart';
-import 'package:todoapp/Res/images.dart';
+import 'package:todoapp/res/app_color.dart';
+import 'package:todoapp/res/images.dart';
 
 AppBar homeAppBar() {
   return AppBar(

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:todoapp/Res/app_color.dart';
-import 'package:todoapp/Screens/Home/Components/home_card_item.dart';
+import 'package:todoapp/res/app_color.dart';
+import 'package:todoapp/screens/home/components/home_card_item.dart';
 
 class TodoCardScreen extends StatelessWidget {
   const TodoCardScreen({Key? key}) : super(key: key);

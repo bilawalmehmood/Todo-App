@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/state_manager.dart';
-import 'package:todoapp/Screens/Home/Controller/home_controller.dart';
+import 'package:todoapp/screens/home/controller/home_controller.dart';
 
 class HomeBottomNevigationBar extends GetView<HomeController> {
   const HomeBottomNevigationBar({Key? key}) : super(key: key);

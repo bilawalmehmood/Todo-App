@@ -1,10 +1,10 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:todoapp/Helper/local_storage.dart';
-import 'package:todoapp/MainController/main_controller.dart';
-import 'package:todoapp/Screens/Auth/log_in_screen.dart';
-import 'package:todoapp/Screens/Home/home_screen.dart';
+import 'package:todoapp/helper/local_storage.dart';
+import 'package:todoapp/main-controller/main_controller.dart';
+import 'package:todoapp/screens/auth/log_in_screen.dart';
+import 'package:todoapp/screens/home/home_screen.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:todoapp/Screens/Auth/Components/auth_button.dart';
-import 'package:todoapp/Screens/Auth/Components/auth_check_account.dart';
-import 'package:todoapp/Screens/Auth/Components/auth_field.dart';
-import 'package:todoapp/Screens/Auth/Controller/sign_up_controller.dart';
-import 'package:todoapp/Screens/Auth/log_in_screen.dart';
+import 'package:todoapp/screens/auth/components/auth_button.dart';
+import 'package:todoapp/screens/auth/components/auth_check_account.dart';
+import 'package:todoapp/screens/auth/components/auth_field.dart';
+import 'package:todoapp/screens/auth/controller/sign_up_controller.dart';
+import 'package:todoapp/screens/auth/log_in_screen.dart';
 
 class SignUpScreen extends GetView<SignUpController> {
   const SignUpScreen({Key? key}) : super(key: key);

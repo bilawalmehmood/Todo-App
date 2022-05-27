@@ -1,13 +1,13 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:todoapp/Helper/local_storage.dart';
-import 'package:todoapp/MainController/main_controller.dart';
-import 'package:todoapp/Model/user_model.dart';
-import 'package:todoapp/Screens/Home/home_screen.dart';
-import 'package:todoapp/Service/auth_service.dart';
-import 'package:todoapp/Service/user_service.dart';
-import 'package:todoapp/Widget/widgets.dart';
+import 'package:todoapp/helper/local_storage.dart';
+import 'package:todoapp/main-controller/main_controller.dart';
+import 'package:todoapp/model/user_model.dart';
+import 'package:todoapp/screens/home/home_screen.dart';
+import 'package:todoapp/service/auth_service.dart';
+import 'package:todoapp/service/user_service.dart';
+import 'package:todoapp/widget/widgets.dart';
 import 'package:todoapp/enum/snack_bar_masseg.dart';
 
 class SignUpController extends GetxController {

@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:todoapp/Screens/Auth/Components/auth_button.dart';
-import 'package:todoapp/Screens/Auth/Components/auth_check_account.dart';
-import 'package:todoapp/Screens/Auth/Components/auth_field.dart';
-import 'package:todoapp/Screens/Auth/Controller/log_in_controller.dart';
-import 'package:todoapp/Screens/Auth/sign_up_screen.dart';
-import 'package:todoapp/Widget/widgets.dart';
+import 'package:todoapp/screens/auth/components/auth_button.dart';
+import 'package:todoapp/screens/auth/components/auth_check_account.dart';
+import 'package:todoapp/screens/auth/components/auth_field.dart';
+import 'package:todoapp/screens/auth/controller/log_in_controller.dart';
+import 'package:todoapp/screens/auth/sign_up_screen.dart';
+import 'package:todoapp/widget/widgets.dart';
 
 class LogInScreen extends GetView<LogInController> {
   const LogInScreen({Key? key}) : super(key: key);

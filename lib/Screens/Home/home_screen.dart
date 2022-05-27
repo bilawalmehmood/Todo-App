@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:todoapp/Screens/Home/Components/home_app_bar.dart';
-import 'package:todoapp/Screens/Home/Components/home_bottom_navigationbar.dart';
-import 'package:todoapp/Screens/Home/Controller/home_controller.dart';
-import 'package:todoapp/Screens/Home/todo_card_screen.dart';
-import 'package:todoapp/Screens/addTodo/add_todo_screen.dart';
+import 'package:todoapp/screens/home/components/home_app_bar.dart';
+import 'package:todoapp/screens/home/components/home_bottom_navigationbar.dart';
+import 'package:todoapp/screens/home/controller/home_controller.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);

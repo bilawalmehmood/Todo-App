@@ -1,13 +1,14 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:todoapp/Helper/local_storage.dart';
-import 'package:todoapp/MainController/main_controller.dart';
-import 'package:todoapp/Screens/Auth/log_in_screen.dart';
-import 'package:todoapp/Screens/Home/todo_card_screen.dart';
-import 'package:todoapp/Screens/addTodo/add_todo_screen.dart';
-import 'package:todoapp/Widget/widgets.dart';
 import 'package:todoapp/enum/snack_bar_masseg.dart';
+import 'package:todoapp/helper/local_storage.dart';
+import 'package:todoapp/main-controller/main_controller.dart';
+import 'package:todoapp/screens/addTodo/add_todo_screen.dart';
+import 'package:todoapp/screens/auth/log_in_screen.dart';
+
+import 'package:todoapp/screens/home/todo_card_screen.dart';
+import 'package:todoapp/widget/widgets.dart';
 
 class HomeController extends GetxController {
   RxInt currentIndex = 0.obs;

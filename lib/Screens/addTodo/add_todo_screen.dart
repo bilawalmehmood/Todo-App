@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:todoapp/Res/app_color.dart';
-import 'package:todoapp/Screens/Auth/Components/auth_button.dart';
-import 'package:todoapp/Screens/addTodo/components/chip_data.dart';
-import 'package:todoapp/Screens/addTodo/components/todo_field.dart';
-import 'package:todoapp/Screens/addTodo/controllers/add_todo_controller.dart';
+import 'package:todoapp/res/app_color.dart';
+import 'package:todoapp/screens/auth/components/auth_button.dart';
+import 'package:todoapp/screens/addTodo/components/chip_data.dart';
+import 'package:todoapp/screens/addTodo/components/todo_field.dart';
+import 'package:todoapp/screens/addTodo/controllers/add_todo_controller.dart';
 
 class AddTodoScreen extends GetView<AddTodoController> {
   const AddTodoScreen({Key? key}) : super(key: key);
