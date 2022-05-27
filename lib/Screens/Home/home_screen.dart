@@ -4,6 +4,7 @@ import 'package:todoapp/Screens/Home/Components/home_app_bar.dart';
 import 'package:todoapp/Screens/Home/Components/home_bottom_navigationbar.dart';
 import 'package:todoapp/Screens/Home/Controller/home_controller.dart';
 import 'package:todoapp/Screens/Home/todo_card_screen.dart';
+import 'package:todoapp/Screens/addTodo/add_todo_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -23,7 +24,7 @@ class _HomeScreenState extends State<HomeScreen> {
         backgroundColor: Colors.black87,
         appBar: homeAppBar(),
         bottomNavigationBar: const HomeBottomNevigationBar(),
-        body: const TodoCardScreen(),
+        body: Obx(() => controller.screens[controller.currentIndex.value]),
       ),
     );
   }
