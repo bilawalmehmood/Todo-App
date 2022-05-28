@@ -95,8 +95,11 @@ class AddTodoScreen extends GetView<AddTodoController> {
                   Center(
                       child: AuthButton(
                           onPressed: (() {
+                            FocusScope.of(context).unfocus();
                             if (controller.validate()) {
                               controller.addTodo();
+                              controller.clearText();
+                              Get.back();
                             }
                           }),
                           name: 'Add Todo'))

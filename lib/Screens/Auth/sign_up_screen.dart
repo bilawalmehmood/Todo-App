@@ -45,11 +45,19 @@ class SignUpScreen extends GetView<SignUpController> {
                   hintText: 'Email',
                   textInputAction: TextInputAction.next,
                 ),
-                AuthField(
-                  controller: controller.passwordController,
-                  hintText: 'Password',
-                  obscureText: true,
-                  textInputAction: TextInputAction.done,
+                Obx(
+                  () => AuthField(
+                    suffixPressed: (() {
+                      controller.check(!controller.check.value);
+                    }),
+                    controller: controller.passwordController,
+                    hintText: 'Password',
+                    obscureText: controller.check.value,
+                    textInputAction: TextInputAction.done,
+                    suffixIcon: controller.check.value
+                        ? Icons.visibility_off
+                        : Icons.visibility,
+                  ),
                 ),
                 const SizedBox(
                   height: 20,

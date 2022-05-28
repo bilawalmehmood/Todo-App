@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:todoapp/main-controller/main_controller.dart';
@@ -15,6 +17,7 @@ class AddTodoController extends GetxController {
   RxBool loading = false.obs;
   RxString task = ''.obs;
   RxString catagory = ''.obs;
+  int tid = 3;
 
   @override
   void onInit() {
@@ -35,7 +38,7 @@ class AddTodoController extends GetxController {
       loading(true);
       TodoModel todoModel = TodoModel(
         uid: _mainController.currentUser.value!.uid,
-        tid: '2',
+        tid: tid.toString(),
         title: titleController.text,
         task: task.value,
         description: descriptionController.text,
@@ -44,6 +47,7 @@ class AddTodoController extends GetxController {
 
       await TodoService.setTodoDetails(todoModel);
       showSnackbar(SnackbarMessage.success, 'Todo Added Succefully');
+      tid++;
       loading(false);
     } catch (e) {
       loading(false);
@@ -52,18 +56,35 @@ class AddTodoController extends GetxController {
   }
 
   bool validate() {
-    if (titleController.text.isEmpty && descriptionController.text.isEmpty) {
-      showSnackbar(
-          SnackbarMessage.missing, 'Please enter the title and description.');
+    if (titleController.text.isEmpty &&
+        descriptionController.text.isEmpty &&
+        task.isEmpty &&
+        catagory.isEmpty) {
+      showSnackbar(SnackbarMessage.missing, 'Please fill all the data.');
       return false;
     } else if (titleController.text.isEmpty) {
       showSnackbar(SnackbarMessage.missing, 'Please enter the title.');
       return false;
+    } else if (task.isEmpty) {
+      showSnackbar(
+          SnackbarMessage.missing, 'Please select any one of task title.');
+      return false;
     } else if (descriptionController.text.trim().isEmpty) {
       showSnackbar(SnackbarMessage.missing, 'Please enter your description.');
+      return false;
+    } else if (catagory.isEmpty) {
+      showSnackbar(
+          SnackbarMessage.missing, ' Please select any one of the catagory.');
       return false;
     } else {
       return true;
     }
+  }
+
+  void clearText() {
+    titleController.clear();
+    descriptionController.clear();
+    task = ''.obs;
+    catagory = ''.obs;
   }
 }

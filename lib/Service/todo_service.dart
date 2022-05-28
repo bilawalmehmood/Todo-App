@@ -1,17 +1,13 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:get/get.dart';
-import 'package:todoapp/main-controller/main_controller.dart';
 import 'package:todoapp/model/todo_model.dart';
 import 'package:todoapp/res/constants.dart';
 
 class TodoService {
-  static final MainController _mainController = Get.put(MainController());
+  // static final MainController _mainController = Get.put(MainController());
 
   static Future<void> setTodoDetails(TodoModel todoModel) async {
     await Constants.todoCollection
-        .doc(
-          _mainController.currentUser.value!.uid,
-        )
+        .doc(todoModel.tid)
         .set(TodoModel.toMap(todoModel));
   }
 

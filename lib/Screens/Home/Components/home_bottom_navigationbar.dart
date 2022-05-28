@@ -36,7 +36,7 @@ class HomeBottomNevigationBar extends GetView<HomeController> {
               ),
               child: const Icon(Icons.add),
             ),
-            label: 'Add',
+            label: '',
           ),
           const BottomNavigationBarItem(
               icon: Icon(

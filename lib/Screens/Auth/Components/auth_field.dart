@@ -52,17 +52,17 @@ class AuthField extends StatelessWidget {
           color: AppColor.textColor,
         ),
         decoration: InputDecoration(
-          // icon: Icon(
-          //   icon,
-          //   color: AppColor.primaryColor,
-          // ),
-          // suffixIcon: GestureDetector(
-          //   onTap: suffixPressed,
-          //   child: Icon(
-          //     suffixIcon,
-          //     color: AppColor.primaryColor,
-          //   ),
-          // ),
+          icon: Icon(
+            icon,
+            color: AppColor.primaryColor,
+          ),
+          suffixIcon: GestureDetector(
+            onTap: suffixPressed,
+            child: Icon(
+              suffixIcon,
+              color: AppColor.textColor,
+            ),
+          ),
           border: InputBorder.none,
           hintText: hintText,
           hintStyle: const TextStyle(fontSize: 15, color: AppColor.hintColor),

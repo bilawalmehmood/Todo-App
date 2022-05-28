@@ -17,6 +17,7 @@ class SignUpController extends GetxController {
   final MainController _mainController = Get.put(MainController());
 
   RxBool loading = false.obs;
+  RxBool check = false.obs;
 
   @override
   void onInit() {

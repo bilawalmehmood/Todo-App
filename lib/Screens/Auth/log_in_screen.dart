@@ -41,11 +41,19 @@ class LogInScreen extends GetView<LogInController> {
                   hintText: 'Email',
                   textInputAction: TextInputAction.next,
                 ),
-                AuthField(
-                  controller: controller.passwordController,
-                  hintText: 'Password',
-                  obscureText: true,
-                  textInputAction: TextInputAction.done,
+                Obx(
+                  () => AuthField(
+                    suffixPressed: (() {
+                      controller.check(!controller.check.value);
+                    }),
+                    controller: controller.passwordController,
+                    hintText: 'Password',
+                    obscureText: controller.check.value,
+                    suffixIcon: controller.check.value
+                        ? Icons.visibility_off
+                        : Icons.visibility,
+                    textInputAction: TextInputAction.done,
+                  ),
                 ),
                 const SizedBox(
                   height: 20,
