@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:todoapp/main-controller/main_controller.dart';
 import 'package:todoapp/res/app_color.dart';
 import 'package:todoapp/res/constants.dart';
 import 'package:todoapp/screens/home/components/home_card_item.dart';
@@ -13,6 +14,7 @@ class TodoCardScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final HomeController controller = Get.put(HomeController());
+    final MainController mainController = Get.put(MainController());
     return SizedBox(
         width: Get.width,
         child: StreamBuilder(
@@ -54,14 +56,18 @@ class TodoCardScreen extends StatelessWidget {
                           icon = Icons.audiotrack;
                           iconColor = Colors.yellow;
                       }
-
-                      return HomeCardItem(
-                          icon: icon,
-                          title: document['title'],
-                          date: '12 pm',
-                          iconColor: iconColor,
-                          check: true,
-                          iconBgColor: AppColor.textColor);
+                      if (mainController.currentUser.value!.uid ==
+                          document['uid']) {
+                        return HomeCardItem(
+                            icon: icon,
+                            title: document['title'],
+                            date: '12 pm',
+                            iconColor: iconColor,
+                            check: true,
+                            iconBgColor: AppColor.textColor);
+                      } else {
+                        return Container();
+                      }
                     }));
               }
             }));
