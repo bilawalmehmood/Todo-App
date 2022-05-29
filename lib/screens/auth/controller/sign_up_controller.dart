@@ -7,7 +7,7 @@ import 'package:todoapp/models/user_model.dart';
 import 'package:todoapp/screens/home/home_screen.dart';
 import 'package:todoapp/service/auth_service.dart';
 import 'package:todoapp/service/user_service.dart';
-import 'package:todoapp/widget/widgets.dart';
+import 'package:todoapp/widgets/widgets.dart';
 import 'package:todoapp/enum/snack_bar_masseg.dart';
 
 class SignUpController extends GetxController {

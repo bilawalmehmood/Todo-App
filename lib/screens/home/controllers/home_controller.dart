@@ -8,7 +8,7 @@ import 'package:todoapp/screens/addTodo/add_todo_screen.dart';
 import 'package:todoapp/screens/auth/log_in_screen.dart';
 
 import 'package:todoapp/screens/home/todo_card_screen.dart';
-import 'package:todoapp/widget/widgets.dart';
+import 'package:todoapp/widgets/widgets.dart';
 
 class HomeController extends GetxController {
   RxInt currentIndex = 0.obs;

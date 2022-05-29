@@ -5,7 +5,7 @@ import 'package:todoapp/screens/auth/components/auth_check_account.dart';
 import 'package:todoapp/screens/auth/components/auth_field.dart';
 import 'package:todoapp/screens/auth/controller/log_in_controller.dart';
 import 'package:todoapp/screens/auth/sign_up_screen.dart';
-import 'package:todoapp/widget/widgets.dart';
+import 'package:todoapp/widgets/widgets.dart';
 
 class LogInScreen extends GetView<LogInController> {
   const LogInScreen({Key? key}) : super(key: key);
