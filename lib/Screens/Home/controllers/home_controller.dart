@@ -1,11 +1,9 @@
-import 'dart:isolate';
-
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:todoapp/enum/snack_bar_masseg.dart';
-import 'package:todoapp/helper/local_storage.dart';
-import 'package:todoapp/main-controller/main_controller.dart';
+import 'package:todoapp/helpers/local_storage.dart';
+import 'package:todoapp/controllers/main_controller.dart';
 import 'package:todoapp/screens/addTodo/add_todo_screen.dart';
 import 'package:todoapp/screens/auth/log_in_screen.dart';
 

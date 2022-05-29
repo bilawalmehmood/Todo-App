@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
-import 'package:todoapp/helper/local_storage.dart';
-import 'package:todoapp/model/user_model.dart';
+import 'package:todoapp/helpers/local_storage.dart';
+import 'package:todoapp/models/user_model.dart';
 import 'package:todoapp/service/user_service.dart';
 
 class MainController extends GetxController {

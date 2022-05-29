@@ -1,5 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:todoapp/model/user_model.dart';
+import 'package:todoapp/models/user_model.dart';
 import 'package:todoapp/res/constants.dart';
 
 class UserService {

@@ -1,3 +1,6 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter/widgets.dart';
+
 class TodoModel {
   late String tid;
   late String uid;
@@ -5,14 +8,19 @@ class TodoModel {
   late String task;
   late String description;
   late String catagory;
+  late Timestamp date;
+  late IconData iconData;
+  late Color iconColor;
 
-  TodoModel(
-      {required this.uid,
-      required this.tid,
-      required this.title,
-      required this.task,
-      required this.description,
-      required this.catagory});
+  TodoModel({
+    required this.uid,
+    required this.tid,
+    required this.title,
+    required this.task,
+    required this.description,
+    required this.catagory,
+    required this.date,
+  });
 
   static Map<String, dynamic> toMap(TodoModel todoModel) {
     var data = <String, dynamic>{};
@@ -22,6 +30,7 @@ class TodoModel {
     data['task'] = todoModel.task;
     data['description'] = todoModel.description;
     data['catagory'] = todoModel.catagory;
+    data['date'] = todoModel.date;
 
     return data;
   }
@@ -33,5 +42,6 @@ class TodoModel {
     task = mapData['task'];
     description = mapData['description'];
     catagory = mapData['catagory'];
+    date = mapData['date'];
   }
 }

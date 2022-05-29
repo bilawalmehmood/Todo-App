@@ -1,10 +1,11 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:todoapp/res/app_color.dart';
 
 class HomeCardItem extends StatelessWidget {
   final String title;
   final IconData icon;
-  final String date;
+  final Timestamp date;
   final Color iconColor;
   final Color iconBgColor;
   final bool check;
@@ -74,7 +75,7 @@ class HomeCardItem extends StatelessWidget {
                     ),
                   ),
                   Text(
-                    date,
+                    date.toString(),
                     style: const TextStyle(fontSize: 15, color: Colors.white),
                   ),
                   const SizedBox(width: 20),

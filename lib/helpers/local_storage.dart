@@ -1,6 +1,6 @@
 import 'dart:convert';
 import 'package:get_storage/get_storage.dart';
-import 'package:todoapp/model/user_model.dart';
+import 'package:todoapp/models/user_model.dart';
 import 'package:todoapp/res/constants.dart';
 
 class LocalStorage {

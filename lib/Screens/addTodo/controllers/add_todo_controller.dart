@@ -1,9 +1,8 @@
-import 'dart:ffi';
-
-import 'package:flutter/widgets.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:todoapp/main-controller/main_controller.dart';
-import 'package:todoapp/model/todo_model.dart';
+import 'package:todoapp/controllers/main_controller.dart';
+import 'package:todoapp/models/todo_model.dart';
 import 'package:todoapp/service/todo_service.dart';
 import 'package:todoapp/widget/widgets.dart';
 
@@ -17,7 +16,8 @@ class AddTodoController extends GetxController {
   RxBool loading = false.obs;
   RxString task = ''.obs;
   RxString catagory = ''.obs;
-  int tid = 3;
+  IconData? iconData;
+  Color? iconColor;
 
   @override
   void onInit() {
@@ -33,21 +33,49 @@ class AddTodoController extends GetxController {
     super.onClose();
   }
 
+  void setData(String data) {
+    if (data == 'Important' || data == 'Planned') {
+      task(data);
+    } else {
+      catagory(data);
+    }
+  }
+
+  void setColorAndIcon(String data) {
+    if (data == 'Food') {
+      iconData = Icons.local_grocery_store_outlined;
+      iconColor = Colors.blue;
+    } else if (data == 'Workout') {
+      iconData = Icons.alarm;
+      iconColor = Colors.teal;
+    } else if (data == 'Work') {
+      iconData = Icons.work;
+      iconColor = Colors.red;
+    } else if (data == 'Design') {
+      iconData = Icons.audiotrack;
+      iconColor = Colors.yellow;
+    } else {
+      iconData = Icons.run_circle_outlined;
+      iconColor = Colors.green;
+    }
+  }
+
   void addTodo() async {
     try {
       loading(true);
       TodoModel todoModel = TodoModel(
         uid: _mainController.currentUser.value!.uid,
-        tid: tid.toString(),
+        tid: DateTime.now().microsecondsSinceEpoch.toString(),
         title: titleController.text,
         task: task.value,
         description: descriptionController.text,
         catagory: catagory.value,
+        date: Timestamp.now(),
       );
 
       await TodoService.setTodoDetails(todoModel);
+
       showSnackbar(SnackbarMessage.success, 'Todo Added Succefully');
-      tid++;
       loading(false);
     } catch (e) {
       loading(false);
@@ -84,7 +112,5 @@ class AddTodoController extends GetxController {
   void clearText() {
     titleController.clear();
     descriptionController.clear();
-    task = ''.obs;
-    catagory = ''.obs;
   }
 }

@@ -1,9 +1,9 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:todoapp/helper/local_storage.dart';
-import 'package:todoapp/main-controller/main_controller.dart';
-import 'package:todoapp/model/user_model.dart';
+import 'package:todoapp/helpers/local_storage.dart';
+import 'package:todoapp/controllers/main_controller.dart';
+import 'package:todoapp/models/user_model.dart';
 import 'package:todoapp/screens/home/home_screen.dart';
 import 'package:todoapp/service/auth_service.dart';
 import 'package:todoapp/service/user_service.dart';

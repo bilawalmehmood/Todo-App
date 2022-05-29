@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import 'package:todoapp/res/app_color.dart';
 import 'package:todoapp/res/images.dart';
 import 'package:todoapp/screens/auth/log_in_screen.dart';
-import 'package:todoapp/screens/home/controller/home_controller.dart';
+import 'package:todoapp/screens/home/controllers/home_controller.dart';
 
 AppBar homeAppBar() {
   final HomeController controller = Get.put(HomeController());

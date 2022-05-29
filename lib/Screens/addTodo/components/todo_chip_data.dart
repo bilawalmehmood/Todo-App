@@ -19,11 +19,7 @@ class ChipData extends StatelessWidget {
       padding: const EdgeInsets.only(right: 20, bottom: 10, top: 5),
       child: InkWell(
         onTap: (() {
-          if (data == 'Important' || data == 'Planned') {
-            todoController.task(data);
-          } else {
-            todoController.catagory(data);
-          }
+          todoController.setData(data);
         }),
         child: Obx(
           () => Chip(

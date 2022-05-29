@@ -1,5 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:todoapp/model/todo_model.dart';
+import 'package:todoapp/models/todo_model.dart';
 import 'package:todoapp/res/constants.dart';
 
 class TodoService {
@@ -17,5 +17,10 @@ class TodoService {
     TodoModel todoModel =
         TodoModel.fromMap(documentSnapshot.data() as Map<String, dynamic>);
     return todoModel;
+  }
+
+  // Stream builder to collect datat into snapshot
+  static Stream<QuerySnapshot> getCurrentUserTodoList(String uid) {
+    return Constants.todoCollection.where('uid', isEqualTo: uid).snapshots();
   }
 }
