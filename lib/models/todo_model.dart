@@ -1,5 +1,4 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:flutter/widgets.dart';
 
 class TodoModel {
   late String tid;
@@ -9,8 +8,6 @@ class TodoModel {
   late String description;
   late String catagory;
   late Timestamp date;
-  late IconData iconData;
-  late Color iconColor;
 
   TodoModel({
     required this.uid,
@@ -21,8 +18,6 @@ class TodoModel {
     required this.catagory,
     required this.date,
   });
-
-  TodoModel.myModel();
 
   static Map<String, dynamic> toMap(TodoModel todoModel) {
     var data = <String, dynamic>{};

@@ -27,4 +27,18 @@ class Utils {
       }
     }
   }
+
+  static List<dynamic> getIconAndColor(String data) {
+    if (data == 'Food') {
+      return [Icons.local_grocery_store_outlined, Colors.blue];
+    } else if (data == 'Workout') {
+      return [Icons.alarm, Colors.teal];
+    } else if (data == 'Work') {
+      return [Icons.work, Colors.red];
+    } else if (data == 'Design') {
+      return [Icons.audiotrack, Colors.yellow];
+    } else {
+      return [Icons.run_circle_outlined, Colors.green];
+    }
+  }
 }

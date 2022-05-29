@@ -1,30 +1,19 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:todoapp/helpers/date_time_operations.dart';
 import 'package:todoapp/models/todo_model.dart';
 import 'package:todoapp/res/app_color.dart';
+import 'package:todoapp/utils/utils.dart';
 
 class HomeCardItem extends StatelessWidget {
-  final String title;
-  final IconData icon;
-  final Timestamp date;
-  final Color iconColor;
-  final Color iconBgColor;
-  final bool check;
+  final TodoModel todoModel;
 
-  const HomeCardItem(
-      {Key? key,
-      required this.icon,
-      required this.title,
-      required this.date,
-      required this.iconColor,
-      required this.check,
-      required this.iconBgColor})
-      : super(key: key);
+  const HomeCardItem({
+    Key? key,
+    required this.todoModel,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    TodoModel todoModel1 = TodoModel.myModel();
     return Row(
       children: [
         Theme(
@@ -37,7 +26,7 @@ class HomeCardItem extends StatelessWidget {
             child: Checkbox(
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(5)),
-              value: check,
+              value: true,
               activeColor: const Color(0xff6cf8a9),
               checkColor: const Color(0xff0e3e26),
               onChanged: (value) {},
@@ -59,17 +48,17 @@ class HomeCardItem extends StatelessWidget {
                     height: 33,
                     width: 36,
                     decoration: BoxDecoration(
-                        color: iconBgColor,
+                        color: Utils.getIconAndColor(todoModel.catagory)[1],
                         borderRadius: BorderRadius.circular(8)),
                     child: Icon(
-                      icon,
-                      color: iconColor,
+                      Utils.getIconAndColor(todoModel.catagory)[0],
+                      color: Utils.getIconAndColor(todoModel.catagory)[1],
                     ),
                   ),
                   const SizedBox(width: 20),
                   Expanded(
                     child: Text(
-                      title,
+                      todoModel.title,
                       style: const TextStyle(
                           color: AppColor.textColor,
                           fontSize: 18,
@@ -79,7 +68,7 @@ class HomeCardItem extends StatelessWidget {
                   ),
                   Text(
                     DateTimeOperations.getFormattedTimeAgo(
-                        todoModel1.date.toDate()),
+                        todoModel.date.toDate()),
                     style: const TextStyle(fontSize: 15, color: Colors.white),
                   ),
                   const SizedBox(width: 20),

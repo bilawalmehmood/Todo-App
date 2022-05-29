@@ -41,25 +41,6 @@ class AddTodoController extends GetxController {
     }
   }
 
-  void setColorAndIcon(String data) {
-    if (data == 'Food') {
-      iconData = Icons.local_grocery_store_outlined;
-      iconColor = Colors.blue;
-    } else if (data == 'Workout') {
-      iconData = Icons.alarm;
-      iconColor = Colors.teal;
-    } else if (data == 'Work') {
-      iconData = Icons.work;
-      iconColor = Colors.red;
-    } else if (data == 'Design') {
-      iconData = Icons.audiotrack;
-      iconColor = Colors.yellow;
-    } else {
-      iconData = Icons.run_circle_outlined;
-      iconColor = Colors.green;
-    }
-  }
-
   void addTodo() async {
     try {
       loading(true);
