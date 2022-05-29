@@ -1,5 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:todoapp/helpers/date_time_operations.dart';
+import 'package:todoapp/models/todo_model.dart';
 import 'package:todoapp/res/app_color.dart';
 
 class HomeCardItem extends StatelessWidget {
@@ -22,6 +24,7 @@ class HomeCardItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    TodoModel todoModel1 = TodoModel.myModel();
     return Row(
       children: [
         Theme(
@@ -75,7 +78,8 @@ class HomeCardItem extends StatelessWidget {
                     ),
                   ),
                   Text(
-                    date.toString(),
+                    DateTimeOperations.getFormattedTimeAgo(
+                        todoModel1.date.toDate()),
                     style: const TextStyle(fontSize: 15, color: Colors.white),
                   ),
                   const SizedBox(width: 20),

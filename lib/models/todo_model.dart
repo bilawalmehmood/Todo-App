@@ -22,6 +22,8 @@ class TodoModel {
     required this.date,
   });
 
+  TodoModel.myModel();
+
   static Map<String, dynamic> toMap(TodoModel todoModel) {
     var data = <String, dynamic>{};
     data['uid'] = todoModel.uid;
