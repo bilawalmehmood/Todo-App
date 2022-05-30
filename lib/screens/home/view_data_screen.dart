@@ -46,15 +46,30 @@ class ViewDataScreen extends GetView<AddTodoController> {
                             size: 30,
                           ),
                         ),
-                        InkWell(
-                          onTap: () {
-                            edit(!edit.value);
-                          },
-                          child: Icon(
-                            Icons.edit,
-                            color: edit.value ? Colors.white : Colors.red,
-                            size: 20,
-                          ),
+                        Row(
+                          children: [
+                            InkWell(
+                              onTap: () {
+                                edit(!edit.value);
+                              },
+                              child: Icon(
+                                Icons.edit,
+                                color: edit.value ? Colors.white : Colors.red,
+                                size: 25,
+                              ),
+                            ),
+                            const SizedBox(width: 30),
+                            InkWell(
+                              onTap: () {
+                                controller.deleteTodo(todoModel.tid);
+                              },
+                              child: const Icon(
+                                Icons.delete,
+                                color: Colors.white,
+                                size: 25,
+                              ),
+                            ),
+                          ],
                         ),
                       ],
                     ),
@@ -163,7 +178,7 @@ class ViewDataScreen extends GetView<AddTodoController> {
                                   Get.back();
                                 }
                               },
-                              name: 'Add Todo',
+                              name: 'Update Todo',
                             )
                           : Container(),
                     )

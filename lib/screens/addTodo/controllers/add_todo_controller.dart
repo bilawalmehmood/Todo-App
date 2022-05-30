@@ -87,6 +87,20 @@ class AddTodoController extends GetxController {
     }
   }
 
+  void deleteTodo(String tid) async {
+    try {
+      loading(true);
+
+      await TodoService.deleteTodoDetails(tid);
+
+      showSnackbar(SnackbarMessage.success, 'Todo delete Succefully');
+      loading(false);
+    } catch (e) {
+      loading(false);
+      showSnackbar(SnackbarMessage.error, e.toString());
+    }
+  }
+
   bool validate() {
     if (titleController.text.isEmpty &&
         descriptionController.text.isEmpty &&
