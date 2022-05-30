@@ -26,35 +26,33 @@ class ChipData extends StatelessWidget {
       padding: const EdgeInsets.only(right: 20, bottom: 10, top: 5),
       child: Obx(
         () => InkWell(
-          onTap: edit!.value
-              ? (() {
+          onTap: !edit!.value
+              ? () {
                   todoController.setData(data);
-                })
+                }
               : null,
-          child: Obx(
-            () => Chip(
-              backgroundColor: (data == todoController.task.value ||
-                      data == todoController.catagory.value ||
-                      data == selectChip!.value)
-                  ? Colors.white
-                  : Color(color),
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(10),
-              ),
-              label: Text(
-                data,
-                style: TextStyle(
-                    color: (data == todoController.task.value ||
-                            data == todoController.catagory.value ||
-                            data == selectChip!.value)
-                        ? Colors.black
-                        : AppColor.textColor,
-                    fontSize: 15,
-                    fontWeight: FontWeight.w600),
-              ),
-              labelPadding:
-                  const EdgeInsets.symmetric(horizontal: 15, vertical: 5),
+          child: Chip(
+            backgroundColor: (data == todoController.task.value ||
+                    data == todoController.catagory.value ||
+                    data == selectChip!.value)
+                ? Colors.white
+                : Color(color),
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(10),
             ),
+            label: Text(
+              data,
+              style: TextStyle(
+                  color: (data == todoController.task.value ||
+                          data == todoController.catagory.value ||
+                          data == selectChip!.value)
+                      ? Colors.black
+                      : AppColor.textColor,
+                  fontSize: 15,
+                  fontWeight: FontWeight.w600),
+            ),
+            labelPadding:
+                const EdgeInsets.symmetric(horizontal: 15, vertical: 5),
           ),
         ),
       ),

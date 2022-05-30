@@ -71,12 +71,12 @@ class AddTodoScreen extends GetView<AddTodoController> {
                     children: [
                       ChipData(
                           selectChip: ''.obs,
-                          edit: true.obs,
+                          edit: false.obs,
                           data: 'Important',
                           color: (0xff2664fa)),
                       ChipData(
                           selectChip: ''.obs,
-                          edit: true.obs,
+                          edit: false.obs,
                           data: 'Planned',
                           color: (0xff2bc8d9)),
                     ],
@@ -94,27 +94,27 @@ class AddTodoScreen extends GetView<AddTodoController> {
                     children: [
                       ChipData(
                           selectChip: ''.obs,
-                          edit: true.obs,
+                          edit: false.obs,
                           data: 'Food',
                           color: (0xffff6d6e)),
                       ChipData(
                           selectChip: ''.obs,
-                          edit: true.obs,
+                          edit: false.obs,
                           data: 'Workout',
                           color: (0xfff29732)),
                       ChipData(
                           selectChip: ''.obs,
-                          edit: true.obs,
+                          edit: false.obs,
                           data: 'Work',
                           color: (0xff6557ff)),
                       ChipData(
                           selectChip: ''.obs,
-                          edit: true.obs,
+                          edit: false.obs,
                           data: 'Design',
                           color: (0xff234ebd)),
                       ChipData(
                         selectChip: ''.obs,
-                        edit: true.obs,
+                        edit: false.obs,
                         data: 'run',
                         color: (0xff2bc8d9),
                       ),

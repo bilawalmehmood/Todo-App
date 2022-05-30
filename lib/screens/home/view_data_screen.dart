@@ -10,7 +10,7 @@ import 'package:todoapp/screens/addTodo/controllers/add_todo_controller.dart';
 
 class ViewDataScreen extends GetView<AddTodoController> {
   final TodoModel todoModel = Get.arguments;
-  RxBool edit = false.obs;
+  RxBool edit = true.obs;
   ViewDataScreen({Key? key}) : super(key: key);
 
   @override
@@ -52,7 +52,7 @@ class ViewDataScreen extends GetView<AddTodoController> {
                           },
                           child: Icon(
                             Icons.edit,
-                            color: edit.value ? Colors.red : Colors.white,
+                            color: edit.value ? Colors.white : Colors.red,
                             size: 20,
                           ),
                         ),
@@ -80,7 +80,7 @@ class ViewDataScreen extends GetView<AddTodoController> {
                     ),
                     const SizedBox(height: 20),
                     TodoField(
-                      enabled: edit.value,
+                      enabled: !edit.value,
                       controller: controller.titleController,
                       title: 'Title',
                       hintText: todoModel.title,
@@ -105,7 +105,7 @@ class ViewDataScreen extends GetView<AddTodoController> {
                     ),
                     const SizedBox(height: 15),
                     TodoField(
-                      enabled: edit.value,
+                      enabled: !edit.value,
                       controller: controller.descriptionController,
                       title: 'Description',
                       hintText: todoModel.description,
@@ -116,31 +116,36 @@ class ViewDataScreen extends GetView<AddTodoController> {
                     Wrap(
                       children: [
                         ChipData(
-                          selectChip: edit.value ? todoModel.task.obs : ''.obs,
+                          selectChip:
+                              edit.value ? todoModel.catagory.obs : ''.obs,
                           edit: edit,
                           data: 'Food',
                           color: (0xffff6d6e),
                         ),
                         ChipData(
-                          selectChip: edit.value ? todoModel.task.obs : ''.obs,
+                          selectChip:
+                              edit.value ? todoModel.catagory.obs : ''.obs,
                           edit: edit,
                           data: 'Workout',
                           color: (0xfff29732),
                         ),
                         ChipData(
-                          selectChip: edit.value ? todoModel.task.obs : ''.obs,
+                          selectChip:
+                              edit.value ? todoModel.catagory.obs : ''.obs,
                           edit: edit,
                           data: 'Work',
                           color: (0xff6557ff),
                         ),
                         ChipData(
-                          selectChip: edit.value ? todoModel.task.obs : ''.obs,
+                          selectChip:
+                              edit.value ? todoModel.catagory.obs : ''.obs,
                           edit: edit,
                           data: 'Design',
                           color: (0xff234ebd),
                         ),
                         ChipData(
-                          selectChip: edit.value ? todoModel.task.obs : ''.obs,
+                          selectChip:
+                              edit.value ? todoModel.catagory.obs : ''.obs,
                           edit: edit,
                           data: 'run',
                           color: (0xff2bc8d9),
@@ -149,16 +154,19 @@ class ViewDataScreen extends GetView<AddTodoController> {
                     ),
                     const SizedBox(height: 15),
                     Center(
-                        child: AuthButton(
-                            onPressed: (() {
-                              FocusScope.of(context).unfocus();
-                              if (controller.validate()) {
-                                controller.addTodo();
-                                controller.clearText();
-                                Get.back();
-                              }
-                            }),
-                            name: 'Add Todo'))
+                      child: !edit.value
+                          ? AuthButton(
+                              onPressed: () {
+                                FocusScope.of(context).unfocus();
+                                if (controller.validate()) {
+                                  controller.updateTodo(todoModel.tid);
+                                  Get.back();
+                                }
+                              },
+                              name: 'Add Todo',
+                            )
+                          : Container(),
+                    )
                   ],
                 ),
               ),

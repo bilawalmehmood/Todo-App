@@ -64,6 +64,29 @@ class AddTodoController extends GetxController {
     }
   }
 
+  void updateTodo(String tid) async {
+    try {
+      loading(true);
+      TodoModel todoModel = TodoModel(
+        uid: _mainController.currentUser.value!.uid,
+        tid: tid,
+        title: titleController.text,
+        task: task.value,
+        description: descriptionController.text,
+        catagory: catagory.value,
+        date: Timestamp.now(),
+      );
+
+      await TodoService.updateTodoDetails(todoModel);
+
+      showSnackbar(SnackbarMessage.success, 'Todo Updated Succefully');
+      loading(false);
+    } catch (e) {
+      loading(false);
+      showSnackbar(SnackbarMessage.error, e.toString());
+    }
+  }
+
   bool validate() {
     if (titleController.text.isEmpty &&
         descriptionController.text.isEmpty &&

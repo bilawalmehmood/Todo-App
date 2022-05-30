@@ -5,18 +5,27 @@ import 'package:todoapp/res/constants.dart';
 class TodoService {
   // static final MainController _mainController = Get.put(MainController());
 
+// this mehtod will be upload thr data by the the model into firestore in the collection documents
   static Future<void> setTodoDetails(TodoModel todoModel) async {
     await Constants.todoCollection
         .doc(todoModel.tid)
         .set(TodoModel.toMap(todoModel));
   }
 
+// this mehtod will be fetched the data into the model from firestore in the collection documents
   static Future<TodoModel> getTodoDetails(String tid) async {
     DocumentSnapshot documentSnapshot =
         await Constants.userCollection.doc(tid).get();
     TodoModel todoModel =
         TodoModel.fromMap(documentSnapshot.data() as Map<String, dynamic>);
     return todoModel;
+  }
+
+  // this mehtod will be upload thr data by the the model into firestore in the collection documents
+  static Future<void> updateTodoDetails(TodoModel todoModel) async {
+    await Constants.todoCollection
+        .doc(todoModel.tid)
+        .update(TodoModel.toMap(todoModel));
   }
 
   // Stream builder to collect datat into snapshot
