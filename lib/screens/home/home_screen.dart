@@ -12,7 +12,6 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  //final MainController _mainController = Get.put(MainController());
   final HomeController controller = Get.put(HomeController());
 
   @override
@@ -27,15 +26,3 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 }
-
-//  ElevatedButton(
-//               onPressed: (() => controller.logout()),
-//               child: const Text('Logout'),
-//             ),
-//             const SizedBox(height: 20),
-//             ElevatedButton(
-//               onPressed: () {
-//                 Get.to(() => const AddTodoScreen());
-//               },
-//               child: const Text('Todo Screen'),
-//             ),

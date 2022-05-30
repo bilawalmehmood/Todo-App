@@ -21,6 +21,9 @@ class TodoService {
 
   // Stream builder to collect datat into snapshot
   static Stream<QuerySnapshot> getCurrentUserTodoList(String uid) {
-    return Constants.todoCollection.where('uid', isEqualTo: uid).snapshots();
+    return Constants.todoCollection
+        .where('uid', isEqualTo: uid)
+        .orderBy('date', descending: true)
+        .snapshots();
   }
 }

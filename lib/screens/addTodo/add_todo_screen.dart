@@ -68,9 +68,17 @@ class AddTodoScreen extends GetView<AddTodoController> {
                   const SizedBox(height: 15),
                   const TodoTitle(title: 'Task Type'),
                   Row(
-                    children: const [
-                      ChipData(data: 'Important', color: (0xff2664fa)),
-                      ChipData(data: 'Planned', color: (0xff2bc8d9)),
+                    children: [
+                      ChipData(
+                          selectChip: ''.obs,
+                          edit: true.obs,
+                          data: 'Important',
+                          color: (0xff2664fa)),
+                      ChipData(
+                          selectChip: ''.obs,
+                          edit: true.obs,
+                          data: 'Planned',
+                          color: (0xff2bc8d9)),
                     ],
                   ),
                   const SizedBox(height: 15),
@@ -83,12 +91,33 @@ class AddTodoScreen extends GetView<AddTodoController> {
                   const SizedBox(height: 15),
                   const TodoTitle(title: 'Catagory'),
                   Wrap(
-                    children: const [
-                      ChipData(data: 'Food', color: (0xffff6d6e)),
-                      ChipData(data: 'Workout', color: (0xfff29732)),
-                      ChipData(data: 'Work', color: (0xff6557ff)),
-                      ChipData(data: 'Design', color: (0xff234ebd)),
-                      ChipData(data: 'run', color: (0xff2bc8d9)),
+                    children: [
+                      ChipData(
+                          selectChip: ''.obs,
+                          edit: true.obs,
+                          data: 'Food',
+                          color: (0xffff6d6e)),
+                      ChipData(
+                          selectChip: ''.obs,
+                          edit: true.obs,
+                          data: 'Workout',
+                          color: (0xfff29732)),
+                      ChipData(
+                          selectChip: ''.obs,
+                          edit: true.obs,
+                          data: 'Work',
+                          color: (0xff6557ff)),
+                      ChipData(
+                          selectChip: ''.obs,
+                          edit: true.obs,
+                          data: 'Design',
+                          color: (0xff234ebd)),
+                      ChipData(
+                        selectChip: ''.obs,
+                        edit: true.obs,
+                        data: 'run',
+                        color: (0xff2bc8d9),
+                      ),
                     ],
                   ),
                   const SizedBox(height: 15),

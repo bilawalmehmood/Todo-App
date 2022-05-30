@@ -26,7 +26,7 @@ class HomeCardItem extends StatelessWidget {
             child: Checkbox(
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(5)),
-              value: true,
+              value: false,
               activeColor: const Color(0xff6cf8a9),
               checkColor: const Color(0xff0e3e26),
               onChanged: (value) {},
@@ -48,7 +48,7 @@ class HomeCardItem extends StatelessWidget {
                     height: 33,
                     width: 36,
                     decoration: BoxDecoration(
-                        color: Utils.getIconAndColor(todoModel.catagory)[1],
+                        color: Colors.white,
                         borderRadius: BorderRadius.circular(8)),
                     child: Icon(
                       Utils.getIconAndColor(todoModel.catagory)[0],

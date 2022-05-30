@@ -6,12 +6,14 @@ class TodoField extends StatelessWidget {
   final String title;
   final String? hintText;
   final int? maxLines;
+  final bool enabled;
   final TextEditingController controller;
 
   const TodoField({
     Key? key,
     required this.title,
     required this.hintText,
+    this.enabled = true,
     required this.controller,
     this.maxLines = 1,
   }) : super(key: key);
@@ -39,6 +41,7 @@ class TodoField extends StatelessWidget {
             borderRadius: BorderRadius.circular(15),
           ),
           child: TextFormField(
+            enabled: enabled,
             controller: controller,
             maxLines: maxLines,
             style: const TextStyle(
