@@ -38,15 +38,29 @@ AppBar homeAppBar() {
                     fontWeight: FontWeight.bold,
                     color: AppColor.textColor),
               ),
-              InkWell(
-                onTap: () {
-                  () => controller.logout();
-                  Get.offAll(() => const LogInScreen());
-                },
-                child: const Icon(
-                  Icons.logout,
-                  color: Colors.white,
-                ),
+              Row(
+                children: [
+                  InkWell(
+                    onTap: () {
+                      controller.onChanged();
+                    },
+                    child: const Icon(
+                      Icons.delete,
+                      color: Colors.white,
+                    ),
+                  ),
+                  const SizedBox(width: 20),
+                  InkWell(
+                    onTap: () {
+                      () => controller.logout();
+                      Get.offAll(() => const LogInScreen());
+                    },
+                    child: const Icon(
+                      Icons.logout,
+                      color: Colors.white,
+                    ),
+                  ),
+                ],
               ),
             ],
           ),

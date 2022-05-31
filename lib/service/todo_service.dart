@@ -1,5 +1,4 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:get/get.dart';
 import 'package:todoapp/models/todo_model.dart';
 import 'package:todoapp/res/constants.dart';
 
@@ -31,9 +30,7 @@ class TodoService {
 
   // this mehtod will be delete the all data into firestore in the collection documents
   static Future<void> deleteTodoDetails(String tid) async {
-    await Constants.todoCollection.doc(tid).delete().then((value) {
-      Get.back();
-    });
+    await Constants.todoCollection.doc(tid).delete().then((value) {});
   }
 
   // Stream builder to collect datat into snapshot

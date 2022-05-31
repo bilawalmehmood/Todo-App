@@ -16,4 +16,10 @@ class UserService {
         UserModel.fromMap(documentSnapshot.data() as Map<String, dynamic>);
     return userModel;
   }
+
+  static Future<void> updateProfileImage(String uid, String downloadURL) async {
+    await Constants.userCollection
+        .doc(uid)
+        .update({'profileImage': downloadURL});
+  }
 }
