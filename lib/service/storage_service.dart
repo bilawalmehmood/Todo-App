@@ -10,6 +10,7 @@ class StorageService {
         .child('profile_images')
         .child(uid)
         .putFile(imageFile);
+
     String downloadURL =
         await _storageReference.child('profile_images/$uid').getDownloadURL();
     return downloadURL;

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:todoapp/controllers/main_controller.dart';
 import 'package:todoapp/res/app_color.dart';
 import 'package:todoapp/res/images.dart';
 import 'package:todoapp/screens/auth/log_in_screen.dart';
@@ -7,6 +8,7 @@ import 'package:todoapp/screens/home/controllers/home_controller.dart';
 
 AppBar homeAppBar() {
   final HomeController controller = Get.put(HomeController());
+  final MainController mainController = Get.put(MainController());
   return AppBar(
     backgroundColor: Colors.black87,
     title: const Text(
@@ -14,11 +16,14 @@ AppBar homeAppBar() {
       style: TextStyle(
           fontSize: 34, fontWeight: FontWeight.bold, color: AppColor.textColor),
     ),
-    actions: const [
-      CircleAvatar(
-        backgroundImage: AssetImage(Images.bilawal),
+    actions: [
+      Obx(
+        () => CircleAvatar(
+          backgroundImage: NetworkImage(
+              mainController.currentUser.value!.profileImage.toString()),
+        ),
       ),
-      SizedBox(
+      const SizedBox(
         width: 25,
       ),
     ],

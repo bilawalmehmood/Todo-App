@@ -48,6 +48,7 @@ class SignUpController extends GetxController {
           uid: user.uid,
           email: emailController.text.trim(),
           name: nameController.text.trim(),
+          profileImage: null,
         );
         // Here save the data into firestore with the help of user model
         await UserService.saveUser(userModel);

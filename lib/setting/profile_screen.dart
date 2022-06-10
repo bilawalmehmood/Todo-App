@@ -2,20 +2,22 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:image_picker/image_picker.dart';
 import 'package:todoapp/controllers/main_controller.dart';
-import 'package:todoapp/res/images.dart';
 import 'package:todoapp/setting/components/profile_layout.dart';
 import 'package:todoapp/setting/controllers/profile_controller.dart';
 
-class ProfileScreen extends GetView<ProfileController> {
-  static final ImagePicker _picker = ImagePicker();
-  static XFile? image;
+class ProfileScreen extends StatefulWidget {
   const ProfileScreen({Key? key}) : super(key: key);
 
   @override
+  State<ProfileScreen> createState() => _ProfileScreenState();
+}
+
+class _ProfileScreenState extends State<ProfileScreen> {
+  ProfileController controller = Get.put(ProfileController());
+
+  @override
   Widget build(BuildContext context) {
-    Get.put(ProfileController());
     MainController mainController = Get.put(MainController());
     return Stack(
       fit: StackFit.expand,
@@ -54,15 +56,8 @@ class ProfileScreen extends GetView<ProfileController> {
                     // ignore: prefer_const_constructors
                     SizedBox(height: 20),
                     ProfileLayout(
-                        userName: mainController.currentUser.value!.name,
-                        onTap: () async {
-                          image = await _picker.pickImage(
-                              source: ImageSource.gallery);
-                          print('=========>');
-                          // FileImage(File(image!.path));
-                          controller.updateProfileImage(File(image!.path));
-                        },
-                        imagePath: Images.bilawal),
+                      userName: mainController.currentUser.value!.name,
+                    ),
                   ],
                 ),
               ),

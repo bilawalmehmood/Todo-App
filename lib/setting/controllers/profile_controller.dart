@@ -15,6 +15,7 @@ class ProfileController extends GetxController {
   void updateProfileImage(File imageFile) async {
     try {
       loading(true);
+      print('==============> 33 $imageFile');
       String downloadURL = await StorageService.uploadProfileImage(
           imageFile, mainController.currentUser.value!.uid);
       await UserService.updateProfileImage(

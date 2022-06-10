@@ -8,7 +8,7 @@ class UserModel {
     required this.uid,
     required this.email,
     required this.name,
-    this.profileImage = null,
+    this.profileImage,
   });
 
   static Map<String, dynamic> toMap(UserModel userModel) {
